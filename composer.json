@@ -1,0 +1,19 @@
+{
+    "name": "brotkrueml/jobrouter-client-package",
+    "description": "Packaging the JobRouter Client",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Chris Müller",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "~7.2.5",
+        "brotkrueml/jobrouter-client": "*"
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}
