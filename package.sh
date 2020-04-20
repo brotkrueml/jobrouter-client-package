@@ -6,6 +6,14 @@
 PROJECT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 ARCHIVE_DIR=archive
 
+echo "Removing old folders and files ..."
+rm -r "$PROJECT_DIR/vendor"
+rm "$PROJECT_DIR/composer.lock"
+rm "$PROJECT_DIR/$INFO_FILENAME"
+
+echo "Install composer packages ..."
+composer install --prefer-dist --no-dev --no-progress --no-suggest --working-dir="$PROJECT_DIR"
+
 VERSION=$(grep -Po "(?<=private const VERSION = ')([0-9]+\\.[0-9]+\\.[0-9]+)" \
   $PROJECT_DIR/vendor/brotkrueml/jobrouter-client/src/Information/Version.php)
 
@@ -15,14 +23,6 @@ INFO_TEMPLATE_FILENAME=jobrouter-client-template.txt
 INFO_FILENAME=jobrouter-client.txt
 
 echo "Version of JobRouter Client: $VERSION"
-
-echo "Removing old folders and files ..."
-rm -r "$PROJECT_DIR/vendor"
-rm "$PROJECT_DIR/composer.lock"
-rm "$PROJECT_DIR/$INFO_FILENAME"
-
-echo "Install composer packages ..."
-composer install --prefer-dist --no-dev --no-progress --no-suggest --working-dir="$PROJECT_DIR"
 
 echo "Writing info file ..."
 cp "$PROJECT_DIR/$INFO_TEMPLATE_FILENAME" "$PROJECT_DIR/$INFO_FILENAME"
