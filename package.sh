@@ -5,6 +5,8 @@
 
 PROJECT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 ARCHIVE_DIR=archive
+INFO_TEMPLATE_FILENAME=jobrouter-client-template.txt
+INFO_FILENAME=jobrouter-client.txt
 
 echo "Removing old folders and files ..."
 rm -r "$PROJECT_DIR/vendor"
@@ -19,8 +21,6 @@ VERSION=$(grep -Po "(?<=private const VERSION = ')([0-9]+\\.[0-9]+\\.[0-9]+)" \
 
 TAR_FILENAME=jobrouter-client-$VERSION.tar.gz
 ZIP_FILENAME=jobrouter-client-$VERSION.zip
-INFO_TEMPLATE_FILENAME=jobrouter-client-template.txt
-INFO_FILENAME=jobrouter-client.txt
 
 echo "Version of JobRouter Client: $VERSION"
 
