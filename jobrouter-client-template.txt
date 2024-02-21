@@ -1,7 +1,7 @@
-JobRouter Client
-================
+JobRouter REST Client
+=====================
 
 Version: ##VERSION##
 
-Repository: https://github.com/brotkrueml/jobrouter-client
-Documentation: https://jobrouter-client.readthedocs.io/
+Repository: https://github.com/jobrouter/php-rest-client
+Documentation: https://github.com/jobrouter/php-rest-client/blob/main/docs/index.md
